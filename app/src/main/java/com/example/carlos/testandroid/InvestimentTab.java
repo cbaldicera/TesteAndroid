@@ -159,5 +159,6 @@ public class InvestimentTab extends Fragment {
         LinearLayout.LayoutParams params = (LinearLayout.LayoutParams)colorView.getLayoutParams();
         params.height = (int)TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 13, getResources().getDisplayMetrics());
         colorView.setLayoutParams(params);
+
     }
 }

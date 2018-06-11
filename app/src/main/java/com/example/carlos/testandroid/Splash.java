@@ -36,3 +36,4 @@ public class Splash extends AppCompatActivity {
         welcomeThread.start();
     }
 }
+

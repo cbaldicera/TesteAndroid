@@ -25,3 +25,4 @@ tools:context="com.example.carlos.testandroid.MainActivity">
     </LinearLayout>
 
 </android.support.v4.app.FragmentTabHost>
+

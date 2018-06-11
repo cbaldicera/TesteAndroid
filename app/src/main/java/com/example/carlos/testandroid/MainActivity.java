@@ -41,5 +41,6 @@ public class MainActivity extends FragmentActivity {
             TextView tv = mTabHost.getTabWidget().getChildAt(i).findViewById(android.R.id.title);
             tv.setTextColor(Color.WHITE);
         }
+
     }
 }

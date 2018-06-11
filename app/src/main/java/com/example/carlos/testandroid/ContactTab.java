@@ -165,6 +165,7 @@ public class ContactTab extends Fragment {
         if (awesomeValidation.validate()) {
             Intent intent = new Intent(getActivity(), MessageSent.class);
             startActivity(intent);
+
         }
     }
 }

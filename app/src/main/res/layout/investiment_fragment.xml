@@ -292,6 +292,7 @@
                 android:layout_margin="10dp"
                 android:background="?android:attr/listDivider" />
 
+
             <TableLayout
                 android:id="@+id/tblInfo"
                 android:layout_width="match_parent"
