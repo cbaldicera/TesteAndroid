@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="20dp"
     tools:context=".MessageSent">
 
     <TextView
@@ -25,8 +26,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="Obrigado!"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+            android:textSize="13sp" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -44,7 +44,9 @@
         android:layout_above="@+id/button2"
         android:layout_centerHorizontal="true"
         android:text="Enviar nova mensagem"
-        android:onClick="OnNewMsgBtnClick"/>
+        android:onClick="OnNewMsgBtnClick"
+        android:textColor="#ff0000"
+        android:textStyle="bold"/>
 
     <Button
         android:id="@+id/button2"
@@ -53,7 +55,9 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:text="Voltar"
-        android:onClick="OnBackBtnClick"/>
+        android:onClick="OnBackBtnClick"
+        android:background="@drawable/btn_red_rounded"
+        android:textColor="#ffffff"/>
 
 
 </RelativeLayout>

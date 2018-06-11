@@ -1,8 +1,10 @@
 package com.example.carlos.testandroid;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.TypedValue;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -101,9 +103,11 @@ public class InvestimentTab extends Fragment {
 
             TextView nameView = new TextView(getContext());
             nameView.setText(item.getString("name"));
+            nameView.setTextAlignment(View.TEXT_ALIGNMENT_TEXT_START);
 
             TextView dataView = new TextView(getContext());
             dataView.setText(item.getString("data"));
+            dataView.setTextAlignment(View.TEXT_ALIGNMENT_TEXT_END);
 
             row.addView(nameView);
             row.addView(dataView);
@@ -122,16 +126,20 @@ public class InvestimentTab extends Fragment {
 
             TextView nameView = new TextView(getContext());
             nameView.setText(item.getString("name"));
+            nameView.setTextAlignment(View.TEXT_ALIGNMENT_TEXT_START);
 
             LinearLayout newLL = new LinearLayout(getContext());
 
             ImageView dataView = new ImageView(getContext());
             dataView.setImageResource(R.drawable.ic_download);
+            dataView.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.MATCH_PARENT));
             TextView downloadView = new TextView(getContext());
             downloadView.setText("Baixar");
+            downloadView.setTextColor(Color.RED);
 
             newLL.addView(dataView);
             newLL.addView(downloadView);
+            newLL.setGravity(Gravity.RIGHT);
 
             row.addView(nameView);
             row.addView(newLL);

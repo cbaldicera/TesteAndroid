@@ -1,6 +1,7 @@
 package com.example.carlos.testandroid;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.text.Editable;
@@ -56,6 +57,9 @@ public class ContactTab extends Fragment {
 
         LinearLayout mainLayout = v.findViewById(R.id.mainLayout);
 
+        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+        params.setMargins(0,10,0,50);
+
         for (int i = 0; i < arr.length(); i++) {
             try {
                 JSONObject currentObj = arr.getJSONObject(i);
@@ -65,6 +69,9 @@ public class ContactTab extends Fragment {
                 // text fields
                 if(type == 1)
                 {
+                    LinearLayout fieldLL = new LinearLayout(getContext());
+                    fieldLL.setOrientation(LinearLayout.VERTICAL);
+
                     TextView label = new TextView(getContext());
                     label.setText(currentObj.getString("message"));
 
@@ -113,8 +120,11 @@ public class ContactTab extends Fragment {
                         default:
                     }
 
-                    mainLayout.addView(label);
-                    mainLayout.addView(txt);
+                    fieldLL.addView(label);
+                    fieldLL.addView(txt);
+                    fieldLL.setLayoutParams(params);
+
+                    mainLayout.addView(fieldLL);
                 }
                 // checkbox fields
                 else if(type == 4)
@@ -122,6 +132,7 @@ public class ContactTab extends Fragment {
                     CheckBox chk = new CheckBox(getContext());
                     chk.setText(currentObj.getString("message"));
                     chk.setId(currentObj.getInt("id"));
+                    chk.setLayoutParams(params);
 
                     mainLayout.addView(chk);
                 }
@@ -137,6 +148,9 @@ public class ContactTab extends Fragment {
                             SubmitForm();
                         }
                     });
+                    btn.setLayoutParams(params);
+                    btn.setBackgroundResource(R.drawable.btn_red_rounded);
+                    btn.setTextColor(Color.WHITE);
 
                     mainLayout.addView(btn);
                 }

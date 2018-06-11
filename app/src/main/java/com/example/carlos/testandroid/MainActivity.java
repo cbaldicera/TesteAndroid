@@ -1,9 +1,12 @@
 package com.example.carlos.testandroid;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTabHost;
+import android.view.View;
+import android.widget.TextView;
 
 public class MainActivity extends FragmentActivity {
 
@@ -30,5 +33,13 @@ public class MainActivity extends FragmentActivity {
                 ContactTab.class, null);
 
         mTabHost.setCurrentTab(tabToActivate);
+
+        for (int i = 0; i < mTabHost.getTabWidget().getChildCount(); i++) {
+            View v = mTabHost.getTabWidget().getChildAt(i);
+            v.setBackgroundResource(R.drawable.tab_red);
+
+            TextView tv = mTabHost.getTabWidget().getChildAt(i).findViewById(android.R.id.title);
+            tv.setTextColor(Color.WHITE);
+        }
     }
 }
