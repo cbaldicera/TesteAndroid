@@ -189,7 +189,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Fundo"
-                        android:textAlignment="center"
+                        android:textAlignment="textEnd"
                         android:layout_column="1"/>
 
                     <TextView
@@ -197,7 +197,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="CDI"
-                        android:textAlignment="center"
+                        android:textAlignment="textEnd"
                         android:layout_column="2"/>
 
                 </TableRow>

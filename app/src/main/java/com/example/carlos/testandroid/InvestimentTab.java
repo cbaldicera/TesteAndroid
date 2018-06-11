@@ -1,6 +1,7 @@
 package com.example.carlos.testandroid;
 
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.TypedValue;
@@ -77,18 +78,24 @@ public class InvestimentTab extends Fragment {
 
         TextView fundInfo0 = v.findViewById(R.id.lblTblFund0);
         fundInfo0.setText(String.valueOf(jsonMonth.getDouble("fund")) + "%");
+        fundInfo0.setTypeface(Typeface.defaultFromStyle(Typeface.BOLD));
         TextView cdiInfo0 = v.findViewById(R.id.lblTblCDI0);
         cdiInfo0.setText(String.valueOf(jsonMonth.getDouble("CDI")) + "%");
+        cdiInfo0.setTypeface(Typeface.defaultFromStyle(Typeface.BOLD));
 
         TextView fundInfo1 = v.findViewById(R.id.lblTblFund1);
         fundInfo1.setText(String.valueOf(jsonYear.getDouble("fund")) + "%");
+        fundInfo1.setTypeface(Typeface.defaultFromStyle(Typeface.BOLD));
         TextView cdiInfo1 = v.findViewById(R.id.lblTblCDI1);
         cdiInfo1.setText(String.valueOf(jsonYear.getDouble("CDI")) + "%");
+        cdiInfo1.setTypeface(Typeface.defaultFromStyle(Typeface.BOLD));
 
         TextView fundInfo2 = v.findViewById(R.id.lblTblFund2);
         fundInfo2.setText(String.valueOf(json12Months.getDouble("fund")) + "%");
+        fundInfo2.setTypeface(Typeface.defaultFromStyle(Typeface.BOLD));
         TextView cdiInfo2 = v.findViewById(R.id.lblTblCDI2);
         cdiInfo2.setText(String.valueOf(json12Months.getDouble("CDI")) + "%");
+        cdiInfo2.setTypeface(Typeface.defaultFromStyle(Typeface.BOLD));
 
         // info
         TableLayout infoTable = v.findViewById(R.id.tblInfo);
@@ -108,6 +115,7 @@ public class InvestimentTab extends Fragment {
             TextView dataView = new TextView(getContext());
             dataView.setText(item.getString("data"));
             dataView.setTextAlignment(View.TEXT_ALIGNMENT_TEXT_END);
+            dataView.setTypeface(Typeface.defaultFromStyle(Typeface.BOLD));
 
             row.addView(nameView);
             row.addView(dataView);
@@ -136,6 +144,7 @@ public class InvestimentTab extends Fragment {
             TextView downloadView = new TextView(getContext());
             downloadView.setText("Baixar");
             downloadView.setTextColor(Color.RED);
+            downloadView.setTypeface(Typeface.defaultFromStyle(Typeface.BOLD));
 
             newLL.addView(dataView);
             newLL.addView(downloadView);
